@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studies Task</title>
+    <link rel="stylesheet" href="task.css" />
+    <script src="../js/task.js"></script>
+  </head>
+  <body>
+    <div class="task-manager">
+      <!-- left bar starts -->
+      <div class="left-bar">
+        <div class="upper-part">
+          <div class="actions">
+            <div class="circle"></div>
+            <div class="circle-2"></div>
+          </div>
+        </div>
+
+        <!-- left content starts -->
+        <div class="left-content">
+            <ul class="action-list">
+                <li class="item">
+                  <img class="feather feather-inbox" src="svg/inbox.svg" alt="" />
+                  <a href="homepage.html">Home</a>
+                </li>
+                <!-- <li class="item">
+                  <img class="feather feather-inbox" src="svg/calender.svg" alt="" />
+                  <a href="homepage.html">Tasks</a>
+                </li> -->
+
+                <li class="item">
+                  <img class="feather feather-hash" src="svg/users.svg" alt="" />
+                  <a href="aboutus.html">About Us</a>
+                </li>
+                <li class="item">
+                  <img class="feather feather-users" src="svg/trending.svg" alt="" />
+                  <a href="contact.html">Contact Us</a>
+                </li>
+              </ul>
+        </div>
+        <!-- left content ends -->
+      </div>
+        <div class="page-content">
+          <div class="header"><center>Tasks</center>
+          </div>
+          <div class="todo-container">
+            <div class="search-bar">
+              <input id="searchInput" type="text" placeholder="Search tasks" />
+              <span class="search-icon">
+                <img class="feather feather-search" src="svg/search (1).svg" alt="Search Icon" />
+              </span>
+            </div>
+            <div class="todo-header">
+              <input id="taskInput" type="text" placeholder="Enter a new task" />
+              <button id="addTaskButton">Add Task</button>
+            </div>
+            <ul id="taskList" class="task-list"></ul>
+          </div>
+        </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+
