@@ -20,7 +20,7 @@ How to Use
 
 Clone the Repository: Start by cloning this repository to your local machine using the following command:
 
-git clone https://github.com/VanshBhargava/task-manager
+git clone https://github.com/IshikaBaliyan/DailyPlanner
 
 
 Open index.html: Navigate to the project folder and open the index.html file in your preferred web browser.
