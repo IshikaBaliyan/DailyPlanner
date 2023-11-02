@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const taskInput = document.getElementById("taskInput");
   const addTaskButton = document.getElementById("addTaskButton");
@@ -19,13 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
         taskItem.classList.add("task-item");
         taskItem.innerHTML = `
           <div class="task-text">
+          <input type="checkbox" class="task-checkbox" data-index="${index}" ${
+            task.done ? "checked" : ""
+          } />
+          <span class="todo-itemtext ${task.done}" >
             ${task.text}
+            </span>
           </div>
+          
           <div class="task-actions">
-            <input type="checkbox" class="task-checkbox" data-index="${index}" ${
-          task.done ? "checked" : ""
-        } />
+            
             <button class="delete-button" data-index="${index}">Delete</button>
+            <button class="update-button" data-index="${index}">Update</button>
           </div>
         `;
         taskList.appendChild(taskItem);
@@ -38,10 +42,17 @@ document.addEventListener("DOMContentLoaded", function () {
   addTaskButton.addEventListener("click", function () {
     const taskText = taskInput.value.trim();
     if (taskText !== "") {
+      const updateIndex = taskInput.dataset.updateIndex;
+      if (updateIndex !== undefined) {
+        // If updating, remove the previous task
+        tasks.splice(updateIndex, 1);
+        delete taskInput.dataset.updateIndex;
+      }
       tasks.push({ text: taskText, done: false });
       saveTasksToLocalStorage();
       renderTasks();
       taskInput.value = "";
+      addTaskButton.textContent = "Add Task";
     }
   });
 
@@ -63,9 +74,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  taskList.addEventListener("click", function (e) {
+    if (e.target.classList.contains("update-button")) {
+      const index = parseInt(e.target.dataset.index);
+      taskInput.value = tasks[index].text; // Set the task text in the input box
+      taskInput.dataset.updateIndex = index; // Store the index for updating
+      addTaskButton.textContent = "Update Task";
+    }
+  });
+
   searchInput.addEventListener("input", function () {
     renderTasks();
   });
 });
-
-
