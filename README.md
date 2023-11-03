@@ -1,7 +1,7 @@
 Task Manager Project --
 
 
-The Task Manager project is a simple web application built using HTML and CSS that allows users to manage their tasks. With this application, users can add, edit, and search for their saved tasks. All tasks are stored locally using the browser's local storage feature, ensuring that your tasks are saved even after you close the browser.
+The Task Manager project is a simple web application built using HTML , CSS and javascript that allows users to manage their tasks. With this application, users can add, edit, and search for their saved tasks. All tasks are stored locally using the browser's local storage feature, ensuring that your tasks are saved even after you close the browser.
 
 Features :
 
@@ -38,6 +38,8 @@ Technologies Used
 HTML
 
 CSS
+
+JAVASCRIPT
 
 Browser Compatibility
 
