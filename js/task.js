@@ -3,10 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const addTaskButton = document.getElementById("addTaskButton");
   const searchInput = document.getElementById("searchInput");
   const taskList = document.getElementById("taskList");
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];//array that stores task object//
 
   function saveTasksToLocalStorage() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));/*used to store tasks array to local storage 
+    It converts the array to a JSON string using JSON.stringify() and stores it with the key "tasks" in local storage.*/
   }
 
   function renderTasks() {
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       tasks.splice(index, 1);
       saveTasksToLocalStorage();
       renderTasks();
-    }
+    }   
   });
 
   taskList.addEventListener("click", function (e) {
